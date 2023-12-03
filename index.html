@@ -1,13 +1,110 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Page Title</title>
+        <title>WORKshop #HTML - FORM</title>
+        <meta charset="utf-8" />
     </head>
     <body>
-
+        <h1>Workshop #HTML - FORM&emsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;</h1>
     
-        <h1>This is a Heading</h1>
-        <p>This is a paragraph.</p>
-
+       
+        <form action="#">
+            <table>
+                <tr>
+                    <td>ชื่อ</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>สกุล</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>วัน/เดือน/ปีเกิด</td>
+                    <td><input type="date" /></td>
+                </tr>
+                <tr>
+                    <td>อายุ</td>
+                    <td><input type="text"/></td>
+                </tr>
+            
+                <tr>
+                    <td>เพศ</td>
+                    <td>
+                        <input id="radio_a"
+                               type="radio" 
+                               name="same_gender"/>
+                        <label for="radio_a">ชาย</label>
+                        <input id="radio_b"
+                                type="radio" 
+                                name="same_gender" />
+                        <label for="radio_b">หญิง</label>
+                        <input id="radio_c"
+                        type="radio"
+                        name="same_gender"
+                        <label for="radio_c"><textarea rows="1" 
+                            placeholder="อื่นๆ"></textarea></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        รูป
+                    </td>
+                    <td><input type="file"></td>
+                </tr>
+            
+                <tr>
+                    <td>ที่อยู่</td>
+                    <td><textarea rows="4" 
+                    placeholder="กรุณาป้อนข้อมูล"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        สีที่ชอบ
+                    </td>
+                    <td>
+                        <label for="favcolor"></label>
+<input type="color" id="favcolor" value="#ff0000">
+                    </td>
+                </tr>
+                <tr>
+                    <td>แนวเพลงที่ชอบ</td>
+                    <td>
+                        <input id="radio_a"
+                               type="radio" 
+                               name="same_gender"/>
+                        <label for="radio_a">ลูกทุ่ง</label>
+                        <input id="radio_b"
+                                type="radio" 
+                                name="same_gender" />
+                        <label for="radio_b">ร็อค</label>
+                        <input id="radio_c"
+                        type="radio"
+                        name="same_gender"
+                        <label for="radio_c"><textarea rows="1" 
+                            placeholder="อื่นๆ"></textarea>
+                            </label>
+                    </td>
+                </tr>
+            
+                <tr>    
+                    <td>
+                        <br><br> <br>
+                        <input type="button" 
+                     value="reset">
+                    </td>
+                    <td>
+                        <br><br> <br>
+                        
+                         <input type="button" 
+                     value="submit">
+         
+                    </td>
+                </tr>
+                
+            </table>
+            <br><br><br>
+        </form>
     </body>
 </html>
