@@ -1,9 +1,9 @@
 <?php
-
+use App\Http\Controllers\c_titles;
 use App\Http\Controllers\MyController;
-use Illuminate\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,40 +16,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/my-controller', [MyController::class, 'index']);
-// Route::get('/my-controller2', 'App\Http\Controllers\MyController@index');
+Route::get('/my-controller', [MyController::class, 'index']);
+
+Route::get('/my-controller2', 'App\Http\Controllers\MyController@index');
 Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/my-controller3', 'MyController@index');
+    Route::post('/my-controller3-post', 'MyController@store');
 });
 
-// Route::resource('/my-controller4', MyController::class);
+Route::resource('/my-controller4', MyController::class);
+
 
 Route::get('/', function () {
-    return view('welcome'); //welcome.blade.php
+    return view('welcome'); // welcome.blade.php
 });
+
+// use Illuminate\Http\Request;
 
 Route::get('/my-route', function(){
     // return view('myroute');
     //        Key    =>  Value
     $data = ['val_a' => 'Hello World!'];
     $data['val_b'] = "Laravel";
-    return view('myfolder.myPage',$data);
+    return view('myfolder.mypage',$data);
 });
 
 
-Route::post('/my-routes', function(Request $req){
+Route::post('/my-route', function(Request $req){
     $data['myinput'] =  $req->input('myinput');
-    return view('myfolder.myroutes', $data);
+    return view('myroute', $data);
 });
-
-Route::get('/my-multiple', function(){
-
-    return view('myfolder.multiple');
-});
-
-
-Route::post('/my-multiple', function(Request $req){
-    $data['myinput'] = $req->input('myinput');
-
-    return view('myfolder.multiple',$data);
-});
+Route::resource('titles',c_titles::class);
