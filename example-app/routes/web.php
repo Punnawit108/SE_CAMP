@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\c_titles;
+use App\Http\Controllers\MyAuth;
 use App\Http\Controllers\MyController;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/login',[MyAuth::class,'login_view'])->name('login');
+Route::get('/register',[MyAuth::class,'register_view']);
+Route::get('/logout',[MyAuth::class,'logout_process']);
+Route::post('/login',[MyAuth::class,'login_process']);
+Route::post('/register',[MyAuth::class,'register_process']);
+Route::post('/Logout',[MyAuth::class,'logout_process']);
 
 Route::get('/my-controller', [MyController::class, 'index']);
 
@@ -46,4 +54,9 @@ Route::post('/my-route', function(Request $req){
     $data['myinput'] =  $req->input('myinput');
     return view('myroute', $data);
 });
-Route::resource('titles',c_titles::class);
+Route::resource('titles',c_titles::class)->middleware('auth');
+Route::middleware('auth')->group(function(){
+
+});
+
+
