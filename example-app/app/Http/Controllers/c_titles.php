@@ -16,6 +16,7 @@ class C_titles extends Controller
         //
 
         $data['titles'] = M_titles::all();
+        session(['key' => 'value']);
 
         return view('titles.index', $data);
     }

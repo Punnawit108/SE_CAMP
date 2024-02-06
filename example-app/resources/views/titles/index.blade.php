@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">SE CAMP</h1>
+                     <h1 class="m-0">SE CAMP : {{ session('key') }} : {{ Auth::user()->id }}</h1>
                     <p class="mb-0">
-                    <a href="login" class="text-center">logout</a>
+                   
                 </p>
                 </div><!-- /.col -->
                 <div class="col-sm-6">

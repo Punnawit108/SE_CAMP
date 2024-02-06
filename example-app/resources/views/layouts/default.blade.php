@@ -181,7 +181,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+
                     </div>
                 </div>
 
@@ -233,6 +234,8 @@
                                 <p>
                                     Simple Link
                                     <span class="right badge badge-danger">New</span>
+                                    <a href="login" class="btn btn-danger">Sign out</a>
+
                                 </p>
                             </a>
                         </li>
@@ -280,6 +283,7 @@
     <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script>
+
 </body>
 
 </html>
